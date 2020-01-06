@@ -1,0 +1,8 @@
+/.metadata/
+
+#eclipse java project files
+.classpath
+.project
+.settings/
+.class
+*/.gitignore
