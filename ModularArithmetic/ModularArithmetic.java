@@ -8,20 +8,33 @@ public class ModularArithmetic {
 		int a; //사용자에게 받을 정수
 		int quotient;  //몫 : 10의 자리
 		int remainder;  //나머지 : 1의 자리
+		boolean isValid;
 
 		System.out.println("[십과 일의 자리수 비교]");
-		System.out.print("2자리 정수 입력 (10~99) >> ");
 		
-		//사용자 입력 (정수)
+		//사용자 입력 방법 1. a 변수만 바뀜
 		Scanner keyboard = new Scanner(System.in);
+		System.out.print("2자리 정수 입력 (10~99) >> ");
 		a = keyboard.nextInt();
-		while ((a < 10)||(a > 99)) { // while ( !((a>=10)&&(a<=99))
-			System.out.println("잘못 입력했습니다.");
-			System.out.print("10~99 사이의 숫자를 입력하세요. >> ");
+		while ((a < 10)||(a > 99)) { // while (!((a>=10)&&(a<=99))) 이것도 가능.
+			System.out.print("2자리 정수 입력 (10~99) >> ");
 			a = keyboard.nextInt();
 		}
 		keyboard.close();
 
+//		//사용자 입력 방법 2. boolean 변수를 사용해 값이 유효한지 판별
+//		Scanner keyboard = new Scanner(System.in);
+//		a = keyboard.nextInt();
+//		isValid = (a>=10)&&(a<=99);
+//		while (!isValid) {
+//			System.out.print("2자리 정수 입력 (10~99) >> ");
+//			a = keyboard.nextInt();
+//			isValid = (a>=10)&&(a<=99);
+//		}
+//		keyboard.close();
+		
+
+		
 		//10의 자리와 1의 자리 구하기
 		quotient = a / 10;  // 58 / 10 = 5로 몫만 나옴.
 		remainder = a % 10; // 58 % 10 = 8 나머지만 나옴.
