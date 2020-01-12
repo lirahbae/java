@@ -16,7 +16,7 @@ public class LoopExercise {
 			int i = 0;
 			while (i < a) {
 				System.out.print("*");
-				i = i + 1; 
+				i++; //i = i + 1; 과 같음
 			}
 			System.out.println(); //다음 문장에서 출력되기 위해 넣음.
 		}
