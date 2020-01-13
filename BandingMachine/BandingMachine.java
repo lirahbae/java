@@ -13,7 +13,7 @@ public class BandingMachine {
 		int totalcost;
 		int extraThousand;
 		int extraFiveHundred;
-		int extraMoney = 0;
+		int extraMoney = 0; //if문(잔돈부족)에 해당되지 않을 때 extraMoney의 기준값을 설정
 		
 		System.out.println("★음료수 자판기 Banding Machine★");
 		System.out.print("천원 개수 >> ");
@@ -39,8 +39,8 @@ public class BandingMachine {
 			System.out.print("오백원 개수 >> ");
 			extraFiveHundred = keyboard.nextInt();
 			extraMoney = extraThousand * 1000 + extraFiveHundred * 500;
-			System.out.println(extraMoney + "원 더해 총 " + (money + extraMoney) + "원 받았습니다.");
 			money = money + extraMoney;
+			System.out.println(extraMoney + "원 더해 총 " + money + "원 받았습니다.");
 		}
 		
 		//for문: 음료수 개수에 따라 텅! 반복출력
