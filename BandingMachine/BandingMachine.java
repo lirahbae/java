@@ -40,7 +40,7 @@ public class BandingMachine {
 			extraFiveHundred = keyboard.nextInt();
 			extraMoney = extraThousand * 1000 + extraFiveHundred * 500;
 			System.out.println(extraMoney + "원 더해 총 " + (money + extraMoney) + "원 받았습니다.");
-			
+			money = money + extraMoney;
 		}
 		
 		//for문: 음료수 개수에 따라 텅! 반복출력
@@ -48,7 +48,7 @@ public class BandingMachine {
 			System.out.print("텅!");
 		}
 		//잔돈 출력
-		change = money + extraMoney - totalcost;
+		change = money - totalcost;
 		System.out.println("\n잔돈은 " + change + "원입니다." );
 		keyboard.close();
 		
