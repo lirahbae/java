@@ -21,21 +21,28 @@ public class BandingMachine {
 		System.out.println(money + "원 받았습니다." );
 	
 		//음료수 개수 입력
-		System.out.print("음료수(" + drinkcost + "원) " + "몇 개 드릴까요?");
+		System.out.print("음료수(" + drinkcost + "원) " + "몇 개 드릴까요? ");
 		drinknumber = keyboard.nextInt();
 		
 		//음료수 가격 출력
 		totalcost = drinknumber * drinkcost;
 		System.out.println("음료수 " + drinknumber + "개 " + totalcost + " 원 입니다.");
 		
-		//for문: 음료수 개수에 따라 텅! 반복출력
-		for (int i = 0; i < drinknumber; i++) {
-			System.out.print("텅!");
+		//if문:잔돈 부족하면 메세지 출력
+		if (money < totalcost) {
+			System.out.println(totalcost - money + "원이 모자라네요.");
 		}
-		//잔돈 출력
-		change = money - totalcost;
-		System.out.println("\n잔돈은 " + change + "원입니다." );
+		else {
+			//for문: 음료수 개수에 따라 텅! 반복출력
+			for (int i = 0; i < drinknumber; i++) {
+				System.out.print("텅!");
+			}
+			//잔돈 출력
+			change = money - totalcost;
+			System.out.println("\n잔돈은 " + change + "원입니다." );
+		}
 		keyboard.close();
+		
 	}
 
 }
